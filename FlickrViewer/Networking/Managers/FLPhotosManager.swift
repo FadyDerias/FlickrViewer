@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectMapper
 
 class FLPhotosManager {
     
@@ -28,7 +29,36 @@ class FLPhotosManager {
         let urlString = searchBaseURL.appending(httpParameters)
         
         return URL(string: urlString)!
+    }
+    
+    func fetchPhotosBySearch(page: Int, userText: String, perPage: Int, success: @escaping (_ photosResult: FLPhotosResult) -> Void, failure: @escaping (_ returnError: NSError) -> Void) {
         
+        let urlForRequest = setupURLForPhotosSearchByText(text: userText, perPage: perPage, page: page)
+        print(urlForRequest)
+        let request = NSMutableURLRequest(url: urlForRequest)
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: request as URLRequest) { (data, response, networkingError) in
+            guard let data = data , networkingError == nil
+                else {
+                    failure(networkingError! as NSError)
+                    print(networkingError!)
+                    return
+            }
+            
+            do {
+                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String,AnyObject>
+                if let photosResult = Mapper<FLPhotosResult>().map(JSONObject: jsonResponse) {
+                    success(photosResult)
+                } else {
+                    print("Error Parsing data from JsonObject")
+                }
+            } catch {
+                print("JSON error: \(error)")
+            }
+        }
+        
+        task.resume()
     }
     
 }
