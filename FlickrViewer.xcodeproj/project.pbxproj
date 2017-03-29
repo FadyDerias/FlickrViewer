@@ -12,6 +12,8 @@
 		057775641E8B9915004C8C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 057775561E8B9915004C8C87 /* Main.storyboard */; };
 		0577756A1E8B9B50004C8C87 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057775691E8B9B50004C8C87 /* Default-568h@2x.png */; };
 		057775831E8B9F1E004C8C87 /* FLPhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775821E8B9F1E004C8C87 /* FLPhotosManager.swift */; };
+		057775851E8BA417004C8C87 /* String+PercentEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775841E8BA417004C8C87 /* String+PercentEncoding.swift */; };
+		057775871E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775861E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		057775591E8B9915004C8C87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		057775691E8B9B50004C8C87 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		057775821E8B9F1E004C8C87 /* FLPhotosManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotosManager.swift; sourceTree = "<group>"; };
+		057775841E8BA417004C8C87 /* String+PercentEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PercentEncoding.swift"; sourceTree = "<group>"; };
+		057775861E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HTTPParameters.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 		057775581E8B9915004C8C87 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				057775841E8BA417004C8C87 /* String+PercentEncoding.swift */,
+				057775861E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -194,6 +200,8 @@
 			files = (
 				057775831E8B9F1E004C8C87 /* FLPhotosManager.swift in Sources */,
 				057775611E8B9915004C8C87 /* AppDelegate.swift in Sources */,
+				057775851E8BA417004C8C87 /* String+PercentEncoding.swift in Sources */,
+				057775871E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
