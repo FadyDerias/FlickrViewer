@@ -14,6 +14,7 @@
 		057775831E8B9F1E004C8C87 /* FLPhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775821E8B9F1E004C8C87 /* FLPhotosManager.swift */; };
 		057775851E8BA417004C8C87 /* String+PercentEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775841E8BA417004C8C87 /* String+PercentEncoding.swift */; };
 		057775871E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775861E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift */; };
+		057775891E8BBD24004C8C87 /* FLPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775881E8BBD24004C8C87 /* FLPhoto.swift */; };
 		49DCE99D4DBA3DB14895BA39 /* Pods_FlickrViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54090C4033F6E0081A3DF749 /* Pods_FlickrViewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		057775821E8B9F1E004C8C87 /* FLPhotosManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotosManager.swift; sourceTree = "<group>"; };
 		057775841E8BA417004C8C87 /* String+PercentEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PercentEncoding.swift"; sourceTree = "<group>"; };
 		057775861E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HTTPParameters.swift"; sourceTree = "<group>"; };
+		057775881E8BBD24004C8C87 /* FLPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhoto.swift; sourceTree = "<group>"; };
 		54090C4033F6E0081A3DF749 /* Pods_FlickrViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C22780605DE2DFD2A5FC2B /* Pods-FlickrViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrViewer/Pods-FlickrViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		C8F6623EE8D58BDA84FE03AA /* Pods-FlickrViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrViewer/Pods-FlickrViewer.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		0577755C1E8B9915004C8C87 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				057775881E8BBD24004C8C87 /* FLPhoto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			files = (
 				057775831E8B9F1E004C8C87 /* FLPhotosManager.swift in Sources */,
 				057775611E8B9915004C8C87 /* AppDelegate.swift in Sources */,
+				057775891E8BBD24004C8C87 /* FLPhoto.swift in Sources */,
 				057775851E8BA417004C8C87 /* String+PercentEncoding.swift in Sources */,
 				057775871E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift in Sources */,
 			);
@@ -391,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87C22780605DE2DFD2A5FC2B /* Pods-FlickrViewer.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FlickrViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -404,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8F6623EE8D58BDA84FE03AA /* Pods-FlickrViewer.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FlickrViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
