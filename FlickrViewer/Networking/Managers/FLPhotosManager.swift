@@ -22,7 +22,7 @@ class FLPhotosManager {
                                     "per_page":"\(perPage)",
                                     "page": "\(page)",
                                     "format":"json",
-                                    "nojsoncallback":"1"] as [String : Any]
+                                    "nojsoncallback":"1"]
         
         let httpParameters = parametersDictionary.stringFromHttpParameters()
         let urlString = searchBaseURL.appending(httpParameters)
