@@ -14,7 +14,7 @@ class FLPhoto: Mappable {
     var photoId: String?
     var ownerId: String?
     var secretId: String?
-    var serverId: NSString?
+    var serverId: String?
     var farmId: Int?
     
     required init?(map: Map) {
