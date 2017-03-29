@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class FLPhotosManager {
+    
+    let apikey = "8bd0e104fbbbfe0a6d1b6a557f1f4365"
+    let appSecret = "9a067a565d6244e4"
+    
+    
+}
