@@ -9,7 +9,8 @@
 import UIKit
 
 class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate {
-
+    
+    @IBOutlet weak var flickrSearchBar: UISearchBar!
     let searchTableViewCellIdentifier = "SearchTableViewCellIdentifier"
     var searchPhotosResults: [FLPhoto]?
     

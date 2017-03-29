@@ -56,6 +56,9 @@
                     <navigationItem key="navigationItem" id="usp-iW-yxN">
                         <nil key="title"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flickrSearchBar" destination="cn7-g9-PiP" id="dNu-w3-q1C"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QR3-cq-Y5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
