@@ -6,5 +6,7 @@ target 'FlickrViewer' do
   use_frameworks!
 
   # Pods for FlickrViewer
+  pod 'ObjectMapper', '~> 2.2'
+
 
 end
