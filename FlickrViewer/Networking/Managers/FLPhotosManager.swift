@@ -17,7 +17,7 @@ class FLPhotosManager {
 
         let searchBaseURL = "https://api.flickr.com/services/rest/"
         let parametersDictionary = ["method":"flickr.photos.search",
-                                    "api_key":"8bd0e104fbbbfe0a6d1b6a557f1f4365",
+                                    "api_key":self.apikey,
                                     "text":"\(text)",
                                     "per_page":"\(perPage)",
                                     "page": "\(page)",
