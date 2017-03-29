@@ -34,7 +34,6 @@ class FLPhotosManager {
     func fetchPhotosBySearch(page: Int, userText: String, perPage: Int, success: @escaping (_ photosResult: FLPhotosResult) -> Void, failure: @escaping (_ returnError: NSError) -> Void) {
         
         let urlForRequest = setupURLForPhotosSearchByText(text: userText, perPage: perPage, page: page)
-        print(urlForRequest)
         let request = NSMutableURLRequest(url: urlForRequest)
         let session = URLSession.shared
         
@@ -51,7 +50,7 @@ class FLPhotosManager {
                 if let photosResult = Mapper<FLPhotosResult>().map(JSONObject: jsonResponse) {
                     success(photosResult)
                 } else {
-                    print("Error Parsing data from JsonObject")
+                    print("Error Parsing data from jsonObject")
                 }
             } catch {
                 print("JSON error: \(error)")
