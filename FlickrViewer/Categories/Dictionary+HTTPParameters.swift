@@ -16,6 +16,6 @@ extension Dictionary {
             return "\(percentEscapedKey)=\(percentEscapedValue)"
         }
         
-        return parameterArray.joined(separator: "&")
+        return "?\(parameterArray.joined(separator: "&"))"
     }
 }
