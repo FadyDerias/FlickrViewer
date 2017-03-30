@@ -28,6 +28,13 @@ class FlickrPhotoTableViewCell: UITableViewCell {
     
     func setupPhotoImageView() {
         self.photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.photoImageView.contentMode = .scaleAspectFit
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.photoImageView.image = nil
+        self.photoTitleLabel.text = ""
     }
     
     override func updateConstraints() {
