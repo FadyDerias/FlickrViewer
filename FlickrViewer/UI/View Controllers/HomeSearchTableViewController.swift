@@ -19,26 +19,27 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         flickrSearchBar.delegate = self
-        flickrSearchBar.becomeFirstResponder()
+        flickrSearchBar.becomeFirstResponder() 
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return searchPhotosResults.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: flickrPhotoTableViewCellIdentifier) as! FlickrPhotoTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: flickrPhotoTableViewCellIdentifier) as!FlickrPhotoTableViewCell
+        
         cell.accessoryType = .disclosureIndicator
         let flPhoto = searchPhotosResults.object(at: indexPath.row) as! FLPhoto
         cell.configureForFlickrPhotoData(flPhoto: flPhoto)
-        
+  
         return cell
     }
     
@@ -50,6 +51,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
             loadResultsForUserInputSearchText()
         }
     }
+    
     
     //MARK: - UISearchBarDelegate
     
@@ -91,13 +93,13 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                     self.loadResultsForUserInputSearchText()
                 })
                 
-                OperationQueue.main.addOperation({ 
+                OperationQueue.main.addOperation({
                     self.present(noInternetConnectionAlertController, animated: true, completion: nil)
                 })
             }
         }
-
-
+        
+        
     }
-
+    
 }
