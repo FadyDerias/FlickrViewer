@@ -14,7 +14,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     let flickrPhotoTableViewCellIdentifier = "FlickrPhotoTableViewCellIdentifier"
     var searchPhotosResults = NSMutableArray()
     var userInputSearchText: String?
-    var nextPagetoLoad: Int = 1
+    var nextPageToLoad: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == (searchPhotosResults.count - 1)) {
-            nextPagetoLoad += 1
+            nextPageToLoad += 1
             loadResultsForUserInputSearchText()
         }
     }
@@ -70,7 +70,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     func loadResultsForUserInputSearchText() {
         let photoManager = FLPhotosManager()
         if let searctText = self.userInputSearchText {
-            photoManager.fetchPhotosBySearch(page: 1, userText: searctText, perPage: 10, success: { (photosResult) in
+            photoManager.fetchPhotosBySearch(page: nextPageToLoad, userText: searctText, perPage: 10, success: { (photosResult) in
                 
                 if let photos = photosResult.photosList?.photos {
                     self.searchPhotosResults.addObjects(from: photos)
