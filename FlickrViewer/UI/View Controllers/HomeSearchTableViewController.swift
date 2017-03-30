@@ -85,12 +85,12 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                 })
             }) { (error) in
                 print(error)
-                let alertController = UIAlertController.defaultNetworkingAlertController({
+                let noInternetConnectionAlertController = UIAlertController.defaultNetworkingAlertController({
                     self.loadResultsForUserInputSearchText()
                 })
                 
                 OperationQueue.main.addOperation({ 
-                    self.present(alertController, animated: true, completion: nil)
+                    self.present(noInternetConnectionAlertController, animated: true, completion: nil)
                 })
             }
         }
