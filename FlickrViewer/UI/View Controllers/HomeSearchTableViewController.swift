@@ -35,6 +35,8 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: searchTableViewCellIdentifier) as! SearchTableViewCell
+        let flPhoto = searchPhotosResults.object(at: indexPath.row) as! FLPhoto
+        cell.configureForFlickrPhotoData(flPhoto: flPhoto)
         
         return cell
     }
