@@ -76,9 +76,22 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                 
                 OperationQueue.main.addOperation({
                     self.tableView.reloadData()
+                    
+                    if (self.searchPhotosResults.count == 0)
+                    {
+                        let noResultsAlertController = UIAlertController.searchResultsAlertController()
+                        self.present(noResultsAlertController, animated: true, completion: nil)
+                    }
                 })
             }) { (error) in
                 print(error)
+                let alertController = UIAlertController.defaultNetworkingAlertController({
+                    self.loadResultsForUserInputSearchText()
+                })
+                
+                OperationQueue.main.addOperation({ 
+                    self.present(alertController, animated: true, completion: nil)
+                })
             }
         }
 
