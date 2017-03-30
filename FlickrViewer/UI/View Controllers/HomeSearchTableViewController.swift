@@ -19,7 +19,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         flickrSearchBar.delegate = self
-        flickrSearchBar.becomeFirstResponder() 
+        flickrSearchBar.becomeFirstResponder()
     }
     
     // MARK: - Table view data source
@@ -72,7 +72,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     func loadResultsForUserInputSearchText() {
         let photoManager = FLPhotosManager()
         if let searctText = self.userInputSearchText {
-            photoManager.fetchPhotosBySearch(page: nextPageToLoad, userText: searctText, perPage: 10, success: { (photosResult) in
+            photoManager.fetchPhotosBySearch(page: nextPageToLoad, userText: searctText, success: { (photosResult) in
                 
                 if let photos = photosResult.photosList?.photos {
                     self.searchPhotosResults.addObjects(from: photos)

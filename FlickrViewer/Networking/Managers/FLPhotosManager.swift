@@ -14,13 +14,13 @@ class FLPhotosManager {
     let apikey = "8bd0e104fbbbfe0a6d1b6a557f1f4365"
     let appSecret = "9a067a565d6244e4"
     
-    func setupURLForPhotosSearchByText(text: String, perPage: Int, page: Int) -> URL {
+    func setupURLForPhotosSearchByText(text: String, page: Int) -> URL {
 
         let searchBaseURL = "https://api.flickr.com/services/rest/"
         let parametersDictionary = ["method":"flickr.photos.search",
                                     "api_key":self.apikey,
                                     "text":"\(text)",
-                                    "per_page":"\(perPage)",
+                                    "per_page":"10",
                                     "page": "\(page)",
                                     "format":"json",
                                     "nojsoncallback":"1"]
@@ -31,9 +31,9 @@ class FLPhotosManager {
         return URL(string: urlString)!
     }
     
-    func fetchPhotosBySearch(page: Int, userText: String, perPage: Int, success: @escaping (_ photosResult: FLPhotosResult) -> Void, failure: @escaping (_ returnError: NSError) -> Void) {
+    func fetchPhotosBySearch(page: Int, userText: String, success: @escaping (_ photosResult: FLPhotosResult) -> Void, failure: @escaping (_ returnError: NSError) -> Void) {
         
-        let urlForRequest = setupURLForPhotosSearchByText(text: userText, perPage: perPage, page: page)
+        let urlForRequest = setupURLForPhotosSearchByText(text: userText, page: page)
         let request = NSMutableURLRequest(url: urlForRequest)
         let session = URLSession.shared
         
