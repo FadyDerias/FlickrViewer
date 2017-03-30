@@ -1,5 +1,5 @@
 //
-//  SearchTableViewCell+ConfigureForFLPhoto.swift
+//  FlickrPhotoTableViewCell+ConfigureForFLPhoto.swift
 //  FlickrViewer
 //
 //  Created by Fady on 3/30/17.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension SearchTableViewCell {
+extension FlickrPhotoTableViewCell {
     
     func configureForFlickrPhotoData(flPhoto: FLPhoto) {
         self.photoTitleLabel.text = flPhoto.title

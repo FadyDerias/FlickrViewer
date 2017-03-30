@@ -11,7 +11,7 @@ import UIKit
 class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var flickrSearchBar: UISearchBar!
-    let searchTableViewCellIdentifier = "SearchTableViewCellIdentifier"
+    let flickrPhotoTableViewCellIdentifier = "FlickrPhotoTableViewCellIdentifier"
     var searchPhotosResults = NSMutableArray()
     var userInputSearchText: String?
     var nextPagetoLoad: Int = 1
@@ -34,7 +34,8 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: searchTableViewCellIdentifier) as! SearchTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: flickrPhotoTableViewCellIdentifier) as! FlickrPhotoTableViewCell
+        
         let flPhoto = searchPhotosResults.object(at: indexPath.row) as! FLPhoto
         cell.configureForFlickrPhotoData(flPhoto: flPhoto)
         

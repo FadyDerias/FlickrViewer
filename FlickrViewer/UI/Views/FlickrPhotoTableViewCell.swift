@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchTableViewCell: UITableViewCell {
+class FlickrPhotoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoTitleLabel: UILabel!
@@ -30,6 +30,7 @@ class SearchTableViewCell: UITableViewCell {
             self.photoImageView.widthAnchor.constraint(equalToConstant: 60),
             self.photoImageView.heightAnchor.constraint(equalToConstant: 60),
             self.photoTitleLabel.leftAnchor.constraint(equalTo: self.photoImageView.rightAnchor, constant: 16),
+            self.photoTitleLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -24),
             self.photoTitleLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
             ])
     }
