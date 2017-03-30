@@ -12,8 +12,9 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     
     @IBOutlet weak var flickrSearchBar: UISearchBar!
     let searchTableViewCellIdentifier = "SearchTableViewCellIdentifier"
-    var searchPhotosResults: [FLPhoto]?
+    var searchPhotosResults = NSMutableArray()
     var userInputSearchText: String?
+    var nextPagetoLoad: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +30,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        guard let numberOfRows = searchPhotosResults?.count else {
-            return 0
-        }
-        
-        return numberOfRows
+        return searchPhotosResults.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,10 +39,20 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         return cell
     }
     
+    // MARK: UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if (indexPath.row == (searchPhotosResults.count - 1)) {
+            nextPagetoLoad += 1
+            loadResultsForUserInputSearchText()
+        }
+    }
+    
     //MARK: - UISearchBarDelegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         userInputSearchText = searchText
+        searchPhotosResults.removeAllObjects()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -58,8 +65,12 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     func loadResultsForUserInputSearchText() {
         let photoManager = FLPhotosManager()
         if let searctText = self.userInputSearchText {
-            photoManager.fetchPhotosBySearch(page: 1, userText: searctText, perPage: 20, success: { (photosResult) in
-                self.searchPhotosResults = photosResult.photosList?.photos
+            photoManager.fetchPhotosBySearch(page: 1, userText: searctText, perPage: 10, success: { (photosResult) in
+                
+                if let photos = photosResult.photosList?.photos {
+                    self.searchPhotosResults.addObjects(from: photos)
+                }
+                
                 OperationQueue.main.addOperation({
                     self.tableView.reloadData()
                 })
