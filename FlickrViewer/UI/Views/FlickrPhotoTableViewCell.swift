@@ -15,9 +15,19 @@ class FlickrPhotoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.photoImageView.translatesAutoresizingMaskIntoConstraints = false
-        self.photoTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        setupPhotoTitleLabel()
+        setupPhotoImageView()
         setNeedsUpdateConstraints()
+    }
+    
+    func setupPhotoTitleLabel() {
+        self.photoTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.photoTitleLabel.numberOfLines = 0
+        self.photoTitleLabel.adjustsFontSizeToFitWidth = true
+    }
+    
+    func setupPhotoImageView() {
+        self.photoImageView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     override func updateConstraints() {
