@@ -13,19 +13,12 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     @IBOutlet weak var flickrSearchBar: UISearchBar!
     let searchTableViewCellIdentifier = "SearchTableViewCellIdentifier"
     var searchPhotosResults: [FLPhoto]?
+    var userInputSearchText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let photoManager = FLPhotosManager()
-        photoManager.fetchPhotosBySearch(page: 1, userText: "Flower", perPage: 20, success: { (photosResult) in
-            self.searchPhotosResults = photosResult.photosList?.photos
-            OperationQueue.main.addOperation({
-                self.tableView.reloadData()
-            })
-        }) { (error) in
-            print(error)
-        }
-      
+        flickrSearchBar.delegate = self
+        flickrSearchBar.becomeFirstResponder()
     }
 
     // MARK: - Table view data source
