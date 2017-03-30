@@ -41,5 +41,34 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         
         return cell
     }
+    
+    //MARK: - UISearchBarDelegate
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        userInputSearchText = searchText
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        loadResultsForUserInputSearchText()
+        searchBar.resignFirstResponder()
+    }
+    
+    //MARK: - Network Request
+    
+    func loadResultsForUserInputSearchText() {
+        let photoManager = FLPhotosManager()
+        if let searctText = self.userInputSearchText {
+            photoManager.fetchPhotosBySearch(page: 1, userText: searctText, perPage: 20, success: { (photosResult) in
+                self.searchPhotosResults = photosResult.photosList?.photos
+                OperationQueue.main.addOperation({
+                    self.tableView.reloadData()
+                })
+            }) { (error) in
+                print(error)
+            }
+        }
+
+
+    }
 
 }
