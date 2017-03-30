@@ -55,10 +55,12 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         userInputSearchText = searchText
-        searchPhotosResults.removeAllObjects()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if(searchPhotosResults.count > 0) {
+            searchPhotosResults.removeAllObjects()
+        }
         loadResultsForUserInputSearchText()
         searchBar.resignFirstResponder()
     }
