@@ -38,11 +38,12 @@ class FlickrPhotoTableViewCell: UITableViewCell {
             self.photoImageView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
             self.photoImageView.widthAnchor.constraint(equalToConstant: 60),
             self.photoImageView.heightAnchor.constraint(equalToConstant: 60),
+
             self.photoTitleLabel.leftAnchor.constraint(equalTo: self.photoImageView.rightAnchor, constant: 16),
-            self.photoTitleLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -24),
-            self.photoTitleLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
+            self.photoTitleLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16),
+            self.photoTitleLabel.topAnchor.constraint(equalTo: self.photoImageView.topAnchor),
+            self.photoTitleLabel.bottomAnchor.constraint(equalTo: self.photoImageView.bottomAnchor)
             ])
     }
-
 
 }
