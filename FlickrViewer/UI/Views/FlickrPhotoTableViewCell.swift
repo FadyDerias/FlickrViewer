@@ -17,7 +17,6 @@ class FlickrPhotoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.photoImageView.translatesAutoresizingMaskIntoConstraints = false
         self.photoTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.accessoryType = .disclosureIndicator
         setNeedsUpdateConstraints()
     }
     
