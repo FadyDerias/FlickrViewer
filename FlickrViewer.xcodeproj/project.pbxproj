@@ -7,36 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		057775611E8B9915004C8C87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775521E8B9915004C8C87 /* AppDelegate.swift */; };
-		057775621E8B9915004C8C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 057775531E8B9915004C8C87 /* Assets.xcassets */; };
-		057775641E8B9915004C8C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 057775561E8B9915004C8C87 /* Main.storyboard */; };
-		0577756A1E8B9B50004C8C87 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057775691E8B9B50004C8C87 /* Default-568h@2x.png */; };
-		057775831E8B9F1E004C8C87 /* FLPhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775821E8B9F1E004C8C87 /* FLPhotosManager.swift */; };
-		057775851E8BA417004C8C87 /* String+PercentEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775841E8BA417004C8C87 /* String+PercentEncoding.swift */; };
-		057775871E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775861E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift */; };
-		057775891E8BBD24004C8C87 /* FLPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775881E8BBD24004C8C87 /* FLPhoto.swift */; };
-		0577758B1E8BC7A8004C8C87 /* HomeSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577758A1E8BC7A8004C8C87 /* HomeSearchTableViewController.swift */; };
-		0577758D1E8BD933004C8C87 /* FLPhotosList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577758C1E8BD933004C8C87 /* FLPhotosList.swift */; };
-		0577758F1E8BE2B2004C8C87 /* FLPhotosResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577758E1E8BE2B2004C8C87 /* FLPhotosResult.swift */; };
-		057775911E8C7196004C8C87 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775901E8C7196004C8C87 /* SearchTableViewCell.swift */; };
+		057775A81E8CF05B004C8C87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775931E8CF05B004C8C87 /* AppDelegate.swift */; };
+		057775A91E8CF05B004C8C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 057775941E8CF05B004C8C87 /* Assets.xcassets */; };
+		057775AA1E8CF05B004C8C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 057775951E8CF05B004C8C87 /* Main.storyboard */; };
+		057775AB1E8CF05B004C8C87 /* Dictionary+HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775981E8CF05B004C8C87 /* Dictionary+HTTPParameters.swift */; };
+		057775AC1E8CF05B004C8C87 /* String+PercentEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775991E8CF05B004C8C87 /* String+PercentEncoding.swift */; };
+		057775AD1E8CF05B004C8C87 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0577759A1E8CF05B004C8C87 /* Info.plist */; };
+		057775AE1E8CF05B004C8C87 /* FLPhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577759D1E8CF05B004C8C87 /* FLPhotosManager.swift */; };
+		057775AF1E8CF05B004C8C87 /* FLPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0577759F1E8CF05B004C8C87 /* FLPhoto.swift */; };
+		057775B01E8CF05B004C8C87 /* FLPhotosList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775A01E8CF05B004C8C87 /* FLPhotosList.swift */; };
+		057775B11E8CF05B004C8C87 /* FLPhotosResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775A11E8CF05B004C8C87 /* FLPhotosResult.swift */; };
+		057775B21E8CF05B004C8C87 /* HomeSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775A51E8CF05B004C8C87 /* HomeSearchTableViewController.swift */; };
+		057775B31E8CF05B004C8C87 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775A71E8CF05B004C8C87 /* SearchTableViewCell.swift */; };
 		49DCE99D4DBA3DB14895BA39 /* Pods_FlickrViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54090C4033F6E0081A3DF749 /* Pods_FlickrViewer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		057775041E8AFD23004C8C87 /* FlickrViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		057775521E8B9915004C8C87 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		057775531E8B9915004C8C87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		057775571E8B9915004C8C87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		057775591E8B9915004C8C87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		057775691E8B9B50004C8C87 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		057775821E8B9F1E004C8C87 /* FLPhotosManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotosManager.swift; sourceTree = "<group>"; };
-		057775841E8BA417004C8C87 /* String+PercentEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PercentEncoding.swift"; sourceTree = "<group>"; };
-		057775861E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HTTPParameters.swift"; sourceTree = "<group>"; };
-		057775881E8BBD24004C8C87 /* FLPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhoto.swift; sourceTree = "<group>"; };
-		0577758A1E8BC7A8004C8C87 /* HomeSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchTableViewController.swift; sourceTree = "<group>"; };
-		0577758C1E8BD933004C8C87 /* FLPhotosList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotosList.swift; sourceTree = "<group>"; };
-		0577758E1E8BE2B2004C8C87 /* FLPhotosResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotosResult.swift; sourceTree = "<group>"; };
-		057775901E8C7196004C8C87 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		057775931E8CF05B004C8C87 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		057775941E8CF05B004C8C87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		057775961E8CF05B004C8C87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		057775981E8CF05B004C8C87 /* Dictionary+HTTPParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HTTPParameters.swift"; sourceTree = "<group>"; };
+		057775991E8CF05B004C8C87 /* String+PercentEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PercentEncoding.swift"; sourceTree = "<group>"; };
+		0577759A1E8CF05B004C8C87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0577759D1E8CF05B004C8C87 /* FLPhotosManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotosManager.swift; sourceTree = "<group>"; };
+		0577759F1E8CF05B004C8C87 /* FLPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhoto.swift; sourceTree = "<group>"; };
+		057775A01E8CF05B004C8C87 /* FLPhotosList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotosList.swift; sourceTree = "<group>"; };
+		057775A11E8CF05B004C8C87 /* FLPhotosResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotosResult.swift; sourceTree = "<group>"; };
+		057775A51E8CF05B004C8C87 /* HomeSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSearchTableViewController.swift; sourceTree = "<group>"; };
+		057775A71E8CF05B004C8C87 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		54090C4033F6E0081A3DF749 /* Pods_FlickrViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C22780605DE2DFD2A5FC2B /* Pods-FlickrViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrViewer/Pods-FlickrViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		C8F6623EE8D58BDA84FE03AA /* Pods-FlickrViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrViewer/Pods-FlickrViewer.release.xcconfig"; sourceTree = "<group>"; };
@@ -57,7 +56,7 @@
 		057774FB1E8AFD23004C8C87 = {
 			isa = PBXGroup;
 			children = (
-				057775511E8B9915004C8C87 /* FlickrViewer */,
+				057775921E8CF05B004C8C87 /* FlickrViewer */,
 				057775051E8AFD23004C8C87 /* Products */,
 				E1035FD740863D87D9A01AF9 /* Pods */,
 				405AB187B3CD6245B1CF0FFE /* Frameworks */,
@@ -72,78 +71,85 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		057775511E8B9915004C8C87 /* FlickrViewer */ = {
+		057775921E8CF05B004C8C87 /* FlickrViewer */ = {
 			isa = PBXGroup;
 			children = (
-				057775521E8B9915004C8C87 /* AppDelegate.swift */,
-				057775561E8B9915004C8C87 /* Main.storyboard */,
-				0577755A1E8B9915004C8C87 /* Networking */,
-				0577755D1E8B9915004C8C87 /* UI */,
-				057775581E8B9915004C8C87 /* Categories */,
-				057775531E8B9915004C8C87 /* Assets.xcassets */,
-				057775691E8B9B50004C8C87 /* Default-568h@2x.png */,
-				057775591E8B9915004C8C87 /* Info.plist */,
+				057775931E8CF05B004C8C87 /* AppDelegate.swift */,
+				057775951E8CF05B004C8C87 /* Main.storyboard */,
+				0577759B1E8CF05B004C8C87 /* Networking */,
+				057775A21E8CF05B004C8C87 /* UI */,
+				057775971E8CF05B004C8C87 /* Categories */,
+				057775941E8CF05B004C8C87 /* Assets.xcassets */,
+				0577759A1E8CF05B004C8C87 /* Info.plist */,
 			);
 			path = FlickrViewer;
 			sourceTree = "<group>";
 		};
-		057775581E8B9915004C8C87 /* Categories */ = {
+		057775971E8CF05B004C8C87 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				057775841E8BA417004C8C87 /* String+PercentEncoding.swift */,
-				057775861E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift */,
+				057775981E8CF05B004C8C87 /* Dictionary+HTTPParameters.swift */,
+				057775991E8CF05B004C8C87 /* String+PercentEncoding.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		0577755A1E8B9915004C8C87 /* Networking */ = {
+		0577759B1E8CF05B004C8C87 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				0577755B1E8B9915004C8C87 /* Managers */,
-				0577755C1E8B9915004C8C87 /* Models */,
+				0577759C1E8CF05B004C8C87 /* Managers */,
+				0577759E1E8CF05B004C8C87 /* Models */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		0577755B1E8B9915004C8C87 /* Managers */ = {
+		0577759C1E8CF05B004C8C87 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				057775821E8B9F1E004C8C87 /* FLPhotosManager.swift */,
+				0577759D1E8CF05B004C8C87 /* FLPhotosManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		0577755C1E8B9915004C8C87 /* Models */ = {
+		0577759E1E8CF05B004C8C87 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				057775881E8BBD24004C8C87 /* FLPhoto.swift */,
-				0577758C1E8BD933004C8C87 /* FLPhotosList.swift */,
-				0577758E1E8BE2B2004C8C87 /* FLPhotosResult.swift */,
+				0577759F1E8CF05B004C8C87 /* FLPhoto.swift */,
+				057775A01E8CF05B004C8C87 /* FLPhotosList.swift */,
+				057775A11E8CF05B004C8C87 /* FLPhotosResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0577755D1E8B9915004C8C87 /* UI */ = {
+		057775A21E8CF05B004C8C87 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0577755E1E8B9915004C8C87 /* View Controllers */,
-				0577755F1E8B9915004C8C87 /* Views */,
+				057775A31E8CF05B004C8C87 /* View Configurations */,
+				057775A41E8CF05B004C8C87 /* View Controllers */,
+				057775A61E8CF05B004C8C87 /* Views */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		0577755E1E8B9915004C8C87 /* View Controllers */ = {
+		057775A31E8CF05B004C8C87 /* View Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				0577758A1E8BC7A8004C8C87 /* HomeSearchTableViewController.swift */,
+			);
+			path = "View Configurations";
+			sourceTree = "<group>";
+		};
+		057775A41E8CF05B004C8C87 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				057775A51E8CF05B004C8C87 /* HomeSearchTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		0577755F1E8B9915004C8C87 /* Views */ = {
+		057775A61E8CF05B004C8C87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				057775901E8C7196004C8C87 /* SearchTableViewCell.swift */,
+				057775A71E8CF05B004C8C87 /* SearchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,9 +233,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				057775641E8B9915004C8C87 /* Main.storyboard in Resources */,
-				057775621E8B9915004C8C87 /* Assets.xcassets in Resources */,
-				0577756A1E8B9B50004C8C87 /* Default-568h@2x.png in Resources */,
+				057775A91E8CF05B004C8C87 /* Assets.xcassets in Resources */,
+				057775AA1E8CF05B004C8C87 /* Main.storyboard in Resources */,
+				057775AD1E8CF05B004C8C87 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,25 +294,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				057775911E8C7196004C8C87 /* SearchTableViewCell.swift in Sources */,
-				057775831E8B9F1E004C8C87 /* FLPhotosManager.swift in Sources */,
-				057775611E8B9915004C8C87 /* AppDelegate.swift in Sources */,
-				057775891E8BBD24004C8C87 /* FLPhoto.swift in Sources */,
-				057775851E8BA417004C8C87 /* String+PercentEncoding.swift in Sources */,
-				0577758B1E8BC7A8004C8C87 /* HomeSearchTableViewController.swift in Sources */,
-				0577758F1E8BE2B2004C8C87 /* FLPhotosResult.swift in Sources */,
-				057775871E8BA5F9004C8C87 /* Dictionary+HTTPParameters.swift in Sources */,
-				0577758D1E8BD933004C8C87 /* FLPhotosList.swift in Sources */,
+				057775B31E8CF05B004C8C87 /* SearchTableViewCell.swift in Sources */,
+				057775A81E8CF05B004C8C87 /* AppDelegate.swift in Sources */,
+				057775B11E8CF05B004C8C87 /* FLPhotosResult.swift in Sources */,
+				057775AB1E8CF05B004C8C87 /* Dictionary+HTTPParameters.swift in Sources */,
+				057775B01E8CF05B004C8C87 /* FLPhotosList.swift in Sources */,
+				057775B21E8CF05B004C8C87 /* HomeSearchTableViewController.swift in Sources */,
+				057775AF1E8CF05B004C8C87 /* FLPhoto.swift in Sources */,
+				057775AE1E8CF05B004C8C87 /* FLPhotosManager.swift in Sources */,
+				057775AC1E8CF05B004C8C87 /* String+PercentEncoding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		057775561E8B9915004C8C87 /* Main.storyboard */ = {
+		057775951E8CF05B004C8C87 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				057775571E8B9915004C8C87 /* Base */,
+				057775961E8CF05B004C8C87 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
