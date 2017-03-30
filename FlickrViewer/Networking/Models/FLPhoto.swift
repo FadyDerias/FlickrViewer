@@ -16,6 +16,7 @@ class FLPhoto: Mappable {
     var secretId: String?
     var serverId: String?
     var farmId: Int?
+    var title: String?
     
     required init?(map: Map) {
     }
@@ -27,6 +28,7 @@ class FLPhoto: Mappable {
         secretId <- map["secret"]
         serverId <- map["server"]
         farmId <- map["farm"]
+        title <- map["title"]
 
     }
 }
