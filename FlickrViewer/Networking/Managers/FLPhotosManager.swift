@@ -23,6 +23,7 @@ class FLPhotosManager {
                     "format":"json",
                     "nojsoncallback":"1"]
     }
+    var urlForRequest:URL?
     
     
     func setupURLForPhotosSearchByText(text: String, page: Int) -> URL {
