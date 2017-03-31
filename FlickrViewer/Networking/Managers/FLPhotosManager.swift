@@ -16,14 +16,15 @@ class FLPhotosManager {
 // appSecret: 9a067a565d6244e4
     
     private let searchBaseURL = "https://api.flickr.com/services/rest/"
-    struct defaultQueryParametersDictionary {
+    private struct defaultQueryParametersDictionary {
         var queryDictionary = ["method":"flickr.photos.search",
                     "api_key":"8bd0e104fbbbfe0a6d1b6a557f1f4365",
                     "per_page":"10",
                     "format":"json",
                     "nojsoncallback":"1"]
     }
-    var urlForRequest:URL?
+    
+    private var urlForRequest:URL?
     
     
     func setupURLForPhotosSearchByText(text: String, page: Int) -> URL {
