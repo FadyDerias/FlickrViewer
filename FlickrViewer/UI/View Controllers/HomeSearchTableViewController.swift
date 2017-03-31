@@ -73,7 +73,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     func loadResultsForUserInputSearchText() {
         let photoManager = FLPhotosManager()
         if let searctText = self.userInputSearchText {
-            photoManager.fetchPhotosBySearch(page: nextPageToLoad, userText: searctText, success: { (photosResult) in
+            photoManager.fetchPhotosBySearch(page: nextPageToLoad, userText: searctText, userId: nil, success: { (photosResult) in
                 
                 if let photos = photosResult.photosList?.photos {
                     self.searchPhotosResults.addObjects(from: photos)
