@@ -18,6 +18,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
         flickrSearchBar.delegate = self
         flickrSearchBar.becomeFirstResponder()
     }
