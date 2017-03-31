@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0521CCA91E8D275900322943 /* FLPhoto+URLForPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521CCA81E8D275900322943 /* FLPhoto+URLForPhoto.swift */; };
 		0521CCAB1E8D2D3D00322943 /* FLPhotoDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521CCAA1E8D2D3D00322943 /* FLPhotoDownloader.swift */; };
+		0521CCAD1E8E91FE00322943 /* UserPhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521CCAC1E8E91FE00322943 /* UserPhotosTableViewController.swift */; };
 		057775A81E8CF05B004C8C87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057775931E8CF05B004C8C87 /* AppDelegate.swift */; };
 		057775A91E8CF05B004C8C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 057775941E8CF05B004C8C87 /* Assets.xcassets */; };
 		057775AA1E8CF05B004C8C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 057775951E8CF05B004C8C87 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		0521CCA81E8D275900322943 /* FLPhoto+URLForPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FLPhoto+URLForPhoto.swift"; sourceTree = "<group>"; };
 		0521CCAA1E8D2D3D00322943 /* FLPhotoDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotoDownloader.swift; sourceTree = "<group>"; };
+		0521CCAC1E8E91FE00322943 /* UserPhotosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPhotosTableViewController.swift; sourceTree = "<group>"; };
 		057775041E8AFD23004C8C87 /* FlickrViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		057775931E8CF05B004C8C87 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		057775941E8CF05B004C8C87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				057775A51E8CF05B004C8C87 /* HomeSearchTableViewController.swift */,
+				0521CCAC1E8E91FE00322943 /* UserPhotosTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				057775AB1E8CF05B004C8C87 /* Dictionary+HTTPParameters.swift in Sources */,
 				057775B91E8CFAF4004C8C87 /* UIAlertController+NetworkingErrors.swift in Sources */,
 				057775B01E8CF05B004C8C87 /* FLPhotosList.swift in Sources */,
+				0521CCAD1E8E91FE00322943 /* UserPhotosTableViewController.swift in Sources */,
 				057775B21E8CF05B004C8C87 /* HomeSearchTableViewController.swift in Sources */,
 				057775AF1E8CF05B004C8C87 /* FLPhoto.swift in Sources */,
 				057775AE1E8CF05B004C8C87 /* FLPhotosManager.swift in Sources */,
