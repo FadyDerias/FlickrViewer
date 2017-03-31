@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserPhotosTableViewCell: UITableViewCell {
+class UserPhotoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoTitleLabel: UILabel!

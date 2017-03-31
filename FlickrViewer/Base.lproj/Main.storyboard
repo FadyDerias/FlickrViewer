@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserPhotoTableViewCellIdentifier" rowHeight="76" id="50F-3W-6Hk" customClass="UserPhotosTableViewCell" customModule="FlickrViewer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserPhotoTableViewCellIdentifier" rowHeight="76" id="50F-3W-6Hk" customClass="UserPhotoTableViewCell" customModule="FlickrViewer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="50F-3W-6Hk" id="pWj-S9-RDl">
@@ -95,8 +95,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="photoImageView" destination="UwJ-m9-8qL" id="7WE-F5-8wc"/>
-                                    <outlet property="photoTitleLabel" destination="TlL-ir-Hu8" id="Khm-7A-7O1"/>
+                                    <outlet property="photoImageView" destination="UwJ-m9-8qL" id="4mK-xy-xs5"/>
+                                    <outlet property="photoTitleLabel" destination="TlL-ir-Hu8" id="aLK-TG-RUA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
