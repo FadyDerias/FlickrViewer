@@ -46,35 +46,42 @@ class FLPhotosManager {
         return URL(string: urlString)!
     }
     
-    func fetchPhotosBySearch(page: Int, userText: String, success: @escaping (_ photosResult: FLPhotosResult) -> Void, failure: @escaping (_ returnError: NSError) -> Void) {
+    func fetchPhotosBySearch(page: Int, userText: String?, userId: String?, success: @escaping (_ photosResult: FLPhotosResult) -> Void, failure: @escaping (_ returnError: NSError) -> Void) {
         
-        let urlForRequest = setupURLForPhotosSearchByText(text: userText, page: page)
-        let request = NSMutableURLRequest(url: urlForRequest)
-        let session = URLSession.shared
         
-        let task = session.dataTask(with: request as URLRequest) { (data, response, networkingError) in
-            guard let data = data , networkingError == nil
-                else {
-                    failure(networkingError! as NSError)
-                    print(networkingError!)
-                    return
-            }
-            
-            do {
-                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String,AnyObject>
-                if let photosResult = Mapper<FLPhotosResult>().map(JSONObject: jsonResponse) {
-                    success(photosResult)
-                } else {
-                    print("Error Parsing data from jsonObject")
-                }
-            } catch {
-                print("JSON error: \(error)")
-            }
+        if let searchText = userText {
+            urlForRequest = setupURLForPhotosSearchByText(text: searchText, page: page)
+        } else if let ownerId = userId {
+            urlForRequest = setupURLForPhotosSearchByUserId(userId: ownerId, page: page)
         }
         
-        task.resume()
-    }
-    
-
-    
+        if let urlRequest = urlForRequest {
+            
+            let request = NSMutableURLRequest(url: urlRequest)
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: request as URLRequest) { (data, response, networkingError) in
+                guard let data = data , networkingError == nil
+                    else {
+                        failure(networkingError! as NSError)
+                        print(networkingError!)
+                        return
+                }
+                
+                do {
+                    let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String,AnyObject>
+                    if let photosResult = Mapper<FLPhotosResult>().map(JSONObject: jsonResponse) {
+                        success(photosResult)
+                    } else {
+                        print("Error Parsing data from jsonObject")
+                    }
+                } catch {
+                    print("JSON error: \(error)")
+                }
+            }
+            
+            task.resume()
+        }
+            
+        }
 }
