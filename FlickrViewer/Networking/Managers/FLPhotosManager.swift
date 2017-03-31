@@ -16,7 +16,7 @@ class FLPhotosManager {
 // appSecret: 9a067a565d6244e4
     
     private let searchBaseURL = "https://api.flickr.com/services/rest/"
-    private struct defaultQueryParametersDictionary {
+    private struct defaultQueryParameters {
         var queryDictionary = ["method":"flickr.photos.search",
                     "api_key":"8bd0e104fbbbfe0a6d1b6a557f1f4365",
                     "per_page":"10",
@@ -28,7 +28,7 @@ class FLPhotosManager {
     
     
     func setupURLForPhotosSearchByText(text: String, page: Int) -> URL {
-        var queryParametersDictionary = defaultQueryParametersDictionary().queryDictionary
+        var queryParametersDictionary = defaultQueryParameters().queryDictionary
         queryParametersDictionary["text"] = "\(text)"
         queryParametersDictionary["page"] = "\(page)"
         let httpParameters = queryParametersDictionary.stringFromHttpParameters()
@@ -38,7 +38,7 @@ class FLPhotosManager {
     }
     
     func setupURLForPhotosSearchByUserId(userId: String, page: Int) -> URL {
-        var queryParametersDictionary = defaultQueryParametersDictionary().queryDictionary
+        var queryParametersDictionary = defaultQueryParameters().queryDictionary
         queryParametersDictionary["user_id"] = "\(userId)"
         queryParametersDictionary["page"] = "\(page)"
         let httpParameters = queryParametersDictionary.stringFromHttpParameters()
