@@ -53,6 +53,22 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         }
     }
     
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowUserPhotosSegueIdentifier" {
+            let userPhotosTableViewController = segue.destination as! UserPhotosTableViewController
+            userPhotosTableViewController.userId = sender as? String
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let flPhoto = searchPhotosResults.object(at: indexPath.row) as! FLPhoto
+        let userId = flPhoto.ownerId
+        performSegue(withIdentifier: "ShowUserPhotosSegueIdentifier", sender: userId)
+    }
+    
     
     //MARK: - UISearchBarDelegate
     
@@ -68,7 +84,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         searchBar.resignFirstResponder()
     }
     
-    //MARK: - Network Request
+    //MARK: - NetworkRequest
     
     func loadResultsForUserInputSearchText() {
         let photoManager = FLPhotosManager()
@@ -99,8 +115,6 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                 })
             }
         }
-        
-        
     }
     
 }
