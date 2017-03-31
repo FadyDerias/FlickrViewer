@@ -10,22 +10,36 @@ import Foundation
 import ObjectMapper
 
 class FLPhotosManager {
+
+// API values after registration for Flcikr APIs access:
+// apikey: 8bd0e104fbbbfe0a6d1b6a557f1f4365
+// appSecret: 9a067a565d6244e4
     
-    let apikey = "8bd0e104fbbbfe0a6d1b6a557f1f4365"
-    let appSecret = "9a067a565d6244e4"
+    private let searchBaseURL = "https://api.flickr.com/services/rest/"
+    struct defaultQueryParametersDictionary {
+        var queryDictionary = ["method":"flickr.photos.search",
+                    "api_key":"8bd0e104fbbbfe0a6d1b6a557f1f4365",
+                    "per_page":"10",
+                    "format":"json",
+                    "nojsoncallback":"1"]
+    }
+    
     
     func setupURLForPhotosSearchByText(text: String, page: Int) -> URL {
-
-        let searchBaseURL = "https://api.flickr.com/services/rest/"
-        let parametersDictionary = ["method":"flickr.photos.search",
-                                    "api_key":self.apikey,
-                                    "text":"\(text)",
-                                    "per_page":"10",
-                                    "page": "\(page)",
-                                    "format":"json",
-                                    "nojsoncallback":"1"]
+        var queryParametersDictionary = defaultQueryParametersDictionary().queryDictionary
+        queryParametersDictionary["text"] = "\(text)"
+        queryParametersDictionary["page"] = "\(page)"
+        let httpParameters = queryParametersDictionary.stringFromHttpParameters()
+        let urlString = searchBaseURL.appending(httpParameters)
         
-        let httpParameters = parametersDictionary.stringFromHttpParameters()
+        return URL(string: urlString)!
+    }
+    
+    func setupURLForPhotosSearchByUserId(userId: String, page: Int) -> URL {
+        var queryParametersDictionary = defaultQueryParametersDictionary().queryDictionary
+        queryParametersDictionary["user_id"] = "\(userId)"
+        queryParametersDictionary["page"] = "\(page)"
+        let httpParameters = queryParametersDictionary.stringFromHttpParameters()
         let urlString = searchBaseURL.appending(httpParameters)
         
         return URL(string: urlString)!
