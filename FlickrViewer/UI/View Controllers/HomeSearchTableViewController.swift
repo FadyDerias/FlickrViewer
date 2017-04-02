@@ -66,7 +66,10 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == (searchPhotosResults.count - 1)) {
-            nextPageToLoad += 1
+            if(nextPageToLoad != nil) {
+                nextPageToLoad! += 1
+            }
+            
             loadResultsForUserInputSearchText()
         }
     }
