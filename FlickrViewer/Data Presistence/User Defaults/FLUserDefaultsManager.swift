@@ -22,3 +22,19 @@ class FLUserDefaultsManager {
         defaults.synchronize()
     }
     
+    func loadSearchParametersFromUserDefaults() -> NSDictionary? {
+        let nextPageToLoad = defaults.value(forKey: pageToLoadKey) as? Int
+        let searchText = defaults.value(forKey: lastUserSearchTextLey) as? String
+        
+        if let userSearchText = searchText, let pageToLoadNumber = nextPageToLoad {
+            let searchParametersDictionary = [lastUserSearchTextLey:userSearchText,
+                                              pageToLoadKey:pageToLoadNumber] as [String : Any]
+            
+            return searchParametersDictionary as NSDictionary
+            
+        } else {
+            return nil
+        }
+        
+    }
+}
