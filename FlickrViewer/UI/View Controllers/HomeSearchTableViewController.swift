@@ -31,6 +31,15 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         } else {
             nextPageToLoad = 1
         }
+        
+        flPhotoEntity = NSEntityDescription.entity(forEntityName: "FLickrPhoto",
+                                                   in: context)
+        
+        if let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: false) {
+            searchPhotosResults.addObjects(from: flPhotos)
+        }
+        
+        self.tableView.reloadData()
     }
     
     // MARK: - Table view data source
