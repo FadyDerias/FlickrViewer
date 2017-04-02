@@ -23,7 +23,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
         flickrSearchBar.delegate = self
-        flickrSearchBar.becomeFirstResponder()
+        tableView.keyboardDismissMode = .onDrag
         
         if let defaultSearchParametersDictionary = FLUserDefaultsManager.sharedInstance.loadSearchParametersFromUserDefaults() {
             nextPageToLoad = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.pageToLoadKey] as? Int
