@@ -30,6 +30,9 @@
 		050B01041E91AA4B007A94E4 /* FlickrPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050B00ED1E91AA4B007A94E4 /* FlickrPhotoTableViewCell.swift */; };
 		050B01051E91AA4B007A94E4 /* UserPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050B00EE1E91AA4B007A94E4 /* UserPhotoTableViewCell.swift */; };
 		0521CCE61E8F991E00322943 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0521CCE51E8F991E00322943 /* Default-568h@2x.png */; };
+		05E1507C1E91BC4A004D4FA5 /* UITableViewCell+PrepareAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E1507B1E91BC4A004D4FA5 /* UITableViewCell+PrepareAccessory.swift */; };
+		05FF7D811E91B41400677008 /* UISearchBar+TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FF7D801E91B41400677008 /* UISearchBar+TextColor.swift */; };
+		05FF7D831E91B6AE00677008 /* UITableViewController+SetTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FF7D821E91B6AE00677008 /* UITableViewController+SetTitle.swift */; };
 		49DCE99D4DBA3DB14895BA39 /* Pods_FlickrViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54090C4033F6E0081A3DF749 /* Pods_FlickrViewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +62,9 @@
 		050B00EE1E91AA4B007A94E4 /* UserPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		0521CCE51E8F991E00322943 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		057775041E8AFD23004C8C87 /* FlickrViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05E1507B1E91BC4A004D4FA5 /* UITableViewCell+PrepareAccessory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+PrepareAccessory.swift"; sourceTree = "<group>"; };
+		05FF7D801E91B41400677008 /* UISearchBar+TextColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+TextColor.swift"; sourceTree = "<group>"; };
+		05FF7D821E91B6AE00677008 /* UITableViewController+SetTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+SetTitle.swift"; sourceTree = "<group>"; };
 		54090C4033F6E0081A3DF749 /* Pods_FlickrViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C22780605DE2DFD2A5FC2B /* Pods-FlickrViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrViewer/Pods-FlickrViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		C8F6623EE8D58BDA84FE03AA /* Pods-FlickrViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrViewer/Pods-FlickrViewer.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,8 +89,8 @@
 				050B00CB1E91AA4B007A94E4 /* Main.storyboard */,
 				050B00DE1E91AA4B007A94E4 /* Networking */,
 				050B00E51E91AA4B007A94E4 /* UI */,
-				050B00CD1E91AA4B007A94E4 /* Categories */,
 				050B00D21E91AA4B007A94E4 /* Data Persistence */,
+				050B00CD1E91AA4B007A94E4 /* Categories */,
 				050B00CA1E91AA4B007A94E4 /* Assets.xcassets */,
 				050B00DC1E91AA4B007A94E4 /* Info.plist */,
 				050B00DD1E91AA4B007A94E4 /* LaunchScreen.storyboard */,
@@ -99,6 +105,9 @@
 				050B00CF1E91AA4B007A94E4 /* FLPhoto+URLForPhoto.swift */,
 				050B00D01E91AA4B007A94E4 /* String+PercentEncoding.swift */,
 				050B00D11E91AA4B007A94E4 /* UIAlertController+NetworkingErrors.swift */,
+				05FF7D801E91B41400677008 /* UISearchBar+TextColor.swift */,
+				05FF7D821E91B6AE00677008 /* UITableViewController+SetTitle.swift */,
+				05E1507B1E91BC4A004D4FA5 /* UITableViewCell+PrepareAccessory.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 			files = (
 				050B00F61E91AA4B007A94E4 /* FlickrViewer.xcdatamodeld in Sources */,
 				050B01001E91AA4B007A94E4 /* FlickrPhotoTableViewCell+ConfigureForFLPhoto.swift in Sources */,
+				05FF7D811E91B41400677008 /* UISearchBar+TextColor.swift in Sources */,
 				050B01011E91AA4B007A94E4 /* UserPhotoTableViewCell+ConfigureForFLPhoto.swift in Sources */,
 				050B00FF1E91AA4B007A94E4 /* FLPhotosResult.swift in Sources */,
 				050B01021E91AA4B007A94E4 /* HomeSearchTableViewController.swift in Sources */,
@@ -381,6 +391,7 @@
 				050B00FD1E91AA4B007A94E4 /* FLPhoto.swift in Sources */,
 				050B00F91E91AA4B007A94E4 /* FLUserDefaultsManager.swift in Sources */,
 				050B00FC1E91AA4B007A94E4 /* FLPhotosManager.swift in Sources */,
+				05FF7D831E91B6AE00677008 /* UITableViewController+SetTitle.swift in Sources */,
 				050B00F81E91AA4B007A94E4 /* FLCoreDataStack.swift in Sources */,
 				050B00F21E91AA4B007A94E4 /* Dictionary+HTTPParameters.swift in Sources */,
 				050B00FE1E91AA4B007A94E4 /* FLPhotosList.swift in Sources */,
@@ -388,6 +399,7 @@
 				050B01051E91AA4B007A94E4 /* UserPhotoTableViewCell.swift in Sources */,
 				050B00F51E91AA4B007A94E4 /* UIAlertController+NetworkingErrors.swift in Sources */,
 				050B01031E91AA4B007A94E4 /* UserPhotosTableViewController.swift in Sources */,
+				05E1507C1E91BC4A004D4FA5 /* UITableViewCell+PrepareAccessory.swift in Sources */,
 				050B00F31E91AA4B007A94E4 /* FLPhoto+URLForPhoto.swift in Sources */,
 				050B01041E91AA4B007A94E4 /* FlickrPhotoTableViewCell.swift in Sources */,
 			);
