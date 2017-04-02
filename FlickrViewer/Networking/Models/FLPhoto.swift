@@ -21,6 +21,15 @@ class FLPhoto: Mappable {
     required init?(map: Map) {
     }
     
+    init(photoId: String, ownerId: String, secretId: String, serverId:String, farmId:Int, title: String ) {
+        self.photoId = photoId
+        self.ownerId = ownerId
+        self.secretId = secretId
+        self.serverId = serverId
+        self.farmId = farmId
+        self.title = title
+    }
+    
     func mapping(map: Map) {
         
         photoId <- map["id"]
