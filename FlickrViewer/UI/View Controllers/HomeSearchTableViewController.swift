@@ -22,25 +22,11 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
-        flickrSearchBar.delegate = self
         tableView.keyboardDismissMode = .onDrag
-        
-        if let defaultSearchParametersDictionary = FLUserDefaultsManager.sharedInstance.loadSearchParametersFromUserDefaults() {
-            nextPageToLoad = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.pageToLoadKey] as? Int
-            userInputSearchText = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.lastUserSearchTextLey] as? String
-        } else {
-            nextPageToLoad = 1
-        }
-        
-        flPhotoEntity = NSEntityDescription.entity(forEntityName: "FLickrPhoto",
-                                                   in: context)
-        
-        if let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: false) {
-            searchPhotosResults.addObjects(from: flPhotos)
-        }
-        
-        self.tableView.reloadData()
         self.setNavigationBarTitle(title: "Flickr Photos Search App")
+        setupFlickrSearchBar()
+        loadSearchQueriesFromUserDefaults()
+        loadDataSourceFromCoreData()
     }
     
     // MARK: - Table view data source
@@ -91,6 +77,13 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         performSegue(withIdentifier: "ShowUserPhotosSegueIdentifier", sender: userId)
     }
     
+    //MARK: - UISearchBarSetup
+    
+    func setupFlickrSearchBar() {
+        flickrSearchBar.delegate = self
+        flickrSearchBar.updateFontColorForSearchText()
+    }
+    
     
     //MARK: - UISearchBarDelegate
     
@@ -110,6 +103,28 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         
         loadResultsForUserInputSearchText()
         searchBar.resignFirstResponder()
+    }
+    
+    //MARK: - UserDefaults
+    
+    func loadSearchQueriesFromUserDefaults() {
+        if let defaultSearchParametersDictionary = FLUserDefaultsManager.sharedInstance.loadSearchParametersFromUserDefaults() {
+            nextPageToLoad = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.pageToLoadKey] as? Int
+            userInputSearchText = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.lastUserSearchTextLey] as? String
+        } else {
+            nextPageToLoad = 1
+        }
+    }
+    
+    //MARK: - CoreData
+    
+    func loadDataSourceFromCoreData() {
+
+        if let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: false) {
+            searchPhotosResults.addObjects(from: flPhotos)
+        }
+        
+        self.tableView.reloadData()
     }
     
     //MARK: - NetworkRequest
