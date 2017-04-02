@@ -40,6 +40,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         }
         
         self.tableView.reloadData()
+        self.setNavigationBarTitle(title: "Flickr Photos Search App")
     }
     
     // MARK: - Table view data source
