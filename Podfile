@@ -7,6 +7,7 @@ target 'FlickrViewer' do
 
   # Pods for FlickrViewer
   pod 'ObjectMapper', '~> 2.2'
+  pod 'SDWebImage', '~>3.8'
 
 
 end

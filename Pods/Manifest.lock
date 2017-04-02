@@ -1,12 +1,17 @@
 PODS:
   - ObjectMapper (2.2.2)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
   - ObjectMapper (~> 2.2)
+  - SDWebImage (~> 3.8)
 
 SPEC CHECKSUMS:
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 257f6f55b14221789a67c7b2ccf5ae302dd4e0ec
+PODFILE CHECKSUM: 34e69bf6075427f7b7e6f88a249425af1decff7a
 
 COCOAPODS: 1.1.1
