@@ -51,3 +51,33 @@ class FLCoreDataManager {
         
         return nil
     }
+    
+    func performActionForHomeSearchTableViewDataSource(managedObjects: [NSManagedObject], deleteCoreData: Bool) -> [FLPhoto]? {
+        var flPhotosArray = NSArray() as! [FLPhoto]
+
+        for resultObject in managedObjects {
+            if (deleteCoreData) {
+                context.delete(resultObject)
+            } else {
+                let flPhotoId = resultObject.value(forKeyPath: "photoId") as! String
+                let flOwnerId = resultObject.value(forKeyPath: "ownerId") as! String
+                let flSecretId = resultObject.value(forKeyPath: "secretId") as! String
+                let flServerId = resultObject.value(forKeyPath: "serverId") as! String
+                let flFarmId = resultObject.value(forKeyPath: "farmId") as! Int
+                let fltitle = resultObject.value(forKeyPath: "title") as! String
+                
+                let flPhoto = FLPhoto(photoId: flPhotoId, ownerId: flOwnerId, secretId: flSecretId, serverId: flServerId, farmId: flFarmId, title: fltitle)
+                
+                flPhotosArray.append(flPhoto)
+            }
+            
+        }
+        
+        if(deleteCoreData) {
+            return nil
+        } else {
+            return flPhotosArray
+        }
+    }
+    
+}
