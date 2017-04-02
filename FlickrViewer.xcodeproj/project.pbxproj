@@ -137,8 +137,8 @@
 		059040EC1E90E87800859B9E /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				059040ED1E90E87800859B9E /* Data Models */,
 				059040F01E90E87800859B9E /* Managers */,
+				059040ED1E90E87800859B9E /* Data Models */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
