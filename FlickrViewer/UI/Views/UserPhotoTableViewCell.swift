@@ -15,9 +15,15 @@ class UserPhotoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupCell()
         setupPhotoTitleLabel()
         setupPhotoImageView()
         setNeedsUpdateConstraints()
+    }
+    
+    func setupCell() {
+        self.separatorInset = UIEdgeInsets.zero
+        self.layoutMargins = UIEdgeInsets.zero
     }
     
     func setupPhotoTitleLabel() {

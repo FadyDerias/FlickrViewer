@@ -15,11 +15,15 @@ class FlickrPhotoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupCell()
         setupPhotoTitleLabel()
         setupPhotoImageView()
         setNeedsUpdateConstraints()
     }
     
+    func setupCell() {
+        separatorInset = UIEdgeInsets.zero
+        layoutMargins = UIEdgeInsets.zero
     func setupPhotoTitleLabel() {
         self.photoTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.photoTitleLabel.numberOfLines = 0
