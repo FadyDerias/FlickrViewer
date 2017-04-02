@@ -24,6 +24,10 @@ class FlickrPhotoTableViewCell: UITableViewCell {
     func setupCell() {
         separatorInset = UIEdgeInsets.zero
         layoutMargins = UIEdgeInsets.zero
+        tintColor = UIColor(red:1.00, green:0.40, blue:0.00, alpha:1.00)
+        accessoryType = .disclosureIndicator
+    }
+    
     func setupPhotoTitleLabel() {
         self.photoTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.photoTitleLabel.numberOfLines = 0
