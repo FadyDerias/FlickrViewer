@@ -13,11 +13,14 @@ class FLCoreDataManager {
     
     static let sharedInstance = FLCoreDataManager()
     private var context = FLCoreDataStack.sharedInstance.managedObjectContext
-    
+
  
-    func savePhotoToCoreData(flickrPhotoEntity: NSEntityDescription?, flPhoto: FLPhoto) {
+    func savePhotoToCoreData(flPhoto: FLPhoto) {
+        
+        let flPhotoEntity = NSEntityDescription.entity(forEntityName: "FLickrPhoto",
+                                                       in: context)
     
-        if let entity = flickrPhotoEntity {
+        if let entity = flPhotoEntity {
             let flickrPhotoManagedObject = NSManagedObject(entity: entity,
                                                            insertInto: context)
             
