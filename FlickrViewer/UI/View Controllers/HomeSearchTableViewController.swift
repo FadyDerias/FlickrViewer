@@ -24,6 +24,13 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         self.tableView.tableFooterView = UIView()
         flickrSearchBar.delegate = self
         flickrSearchBar.becomeFirstResponder()
+        
+        if let defaultSearchParametersDictionary = FLUserDefaultsManager.sharedInstance.loadSearchParametersFromUserDefaults() {
+            nextPageToLoad = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.pageToLoadKey] as? Int
+            userInputSearchText = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.lastUserSearchTextLey] as? String
+        } else {
+            nextPageToLoad = 1
+        }
     }
     
     // MARK: - Table view data source
