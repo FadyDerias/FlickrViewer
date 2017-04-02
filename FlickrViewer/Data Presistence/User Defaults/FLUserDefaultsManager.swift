@@ -14,3 +14,11 @@ class FLUserDefaultsManager {
     private let defaults: UserDefaults = UserDefaults.standard
     let pageToLoadKey = "nextPageToLoad"
     let lastUserSearchTextLey = "searchText"
+    
+    func saveSearchParametersInUserDefaults(nextPageToLoad: Int,userInputSearchText: String ) {
+        
+        defaults.set(nextPageToLoad, forKey: pageToLoadKey)
+        defaults.set(userInputSearchText, forKey: lastUserSearchTextLey)
+        defaults.synchronize()
+    }
+    
