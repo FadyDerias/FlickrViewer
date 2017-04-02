@@ -134,7 +134,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                             self.present(noResultsAlertController, animated: true, completion: nil)
                         } else {
                             for photo in photos {
-                                FLCoreDataManager.sharedInstance.savePhotoToCoreData(flickrPhotoEntity: self.flPhotoEntity, flPhoto: photo)
+                                FLCoreDataManager.sharedInstance.savePhotoToCoreData(flPhoto: photo)
                             }
                             
                             self.tableView.reloadData()
