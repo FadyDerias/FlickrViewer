@@ -10,7 +10,6 @@
 		0521CCD31E8F991000322943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0521CCB41E8F991000322943 /* Assets.xcassets */; };
 		0521CCE61E8F991E00322943 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0521CCE51E8F991E00322943 /* Default-568h@2x.png */; };
 		059041071E90E87800859B9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059040E21E90E87800859B9E /* AppDelegate.swift */; };
-		059041081E90E87800859B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059040E31E90E87800859B9E /* Assets.xcassets */; };
 		059041091E90E87800859B9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059040E41E90E87800859B9E /* Main.storyboard */; };
 		0590410A1E90E87800859B9E /* Dictionary+HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059040E71E90E87800859B9E /* Dictionary+HTTPParameters.swift */; };
 		0590410B1E90E87800859B9E /* FLPhoto+URLForPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059040E81E90E87800859B9E /* FLPhoto+URLForPhoto.swift */; };
@@ -315,7 +314,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0521CCD31E8F991000322943 /* Assets.xcassets in Resources */,
-				059041081E90E87800859B9E /* Assets.xcassets in Resources */,
 				0521CCE61E8F991E00322943 /* Default-568h@2x.png in Resources */,
 				059041111E90E87800859B9E /* LaunchScreen.storyboard in Resources */,
 				059041091E90E87800859B9E /* Main.storyboard in Resources */,
