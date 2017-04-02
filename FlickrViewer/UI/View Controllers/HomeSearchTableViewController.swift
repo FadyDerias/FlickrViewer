@@ -114,9 +114,12 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     //MARK: - NetworkRequest
     
     func loadResultsForUserInputSearchText() {
+        
         let photoManager = FLPhotosManager()
-        if let searctText = self.userInputSearchText {
-            photoManager.fetchPhotosBySearch(page: nextPageToLoad, userText: searctText, userId: nil, success: { (photosResult) in
+        if let searchText = self.userInputSearchText, let pageToLoadNumber = self.nextPageToLoad {
+            FLUserDefaultsManager.sharedInstance.saveSearchParametersInUserDefaults(nextPageToLoad: pageToLoadNumber, userInputSearchText: searchText)
+            
+            photoManager.fetchPhotosBySearch(page: pageToLoadNumber, userText: searchText, userId: nil, success: { (photosResult) in
                 
                 if let photos = photosResult.photosList?.photos {
                     self.searchPhotosResults.addObjects(from: photos)
