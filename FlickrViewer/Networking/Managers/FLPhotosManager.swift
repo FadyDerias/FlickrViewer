@@ -10,18 +10,18 @@ import Foundation
 import ObjectMapper
 
 class FLPhotosManager {
-
-// API values after registration for Flcikr APIs access:
-// apikey: 8bd0e104fbbbfe0a6d1b6a557f1f4365
-// appSecret: 9a067a565d6244e4
+    
+    // API values after registration for Flcikr APIs access:
+    // apikey: 8bd0e104fbbbfe0a6d1b6a557f1f4365
+    // appSecret: 9a067a565d6244e4
     
     private let searchBaseURL = "https://api.flickr.com/services/rest/"
     private struct defaultQueryParameters {
         var queriesDictionary = ["method":"flickr.photos.search",
-                    "api_key":"8bd0e104fbbbfe0a6d1b6a557f1f4365",
-                    "per_page":"10",
-                    "format":"json",
-                    "nojsoncallback":"1"]
+                                 "api_key":"8bd0e104fbbbfe0a6d1b6a557f1f4365",
+                                 "per_page":"10",
+                                 "format":"json",
+                                 "nojsoncallback":"1"]
     }
     
     private var urlForRequest:URL?
@@ -83,6 +83,6 @@ class FLPhotosManager {
             
             task.resume()
         }
-            
-        }
+        
+    }
 }
