@@ -123,17 +123,24 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                 
                 if let photos = photosResult.photosList?.photos {
                     self.searchPhotosResults.addObjects(from: photos)
+                    
+                    OperationQueue.main.addOperation({
+                        
+                        if (photos.count == 0)
+                        {
+                            let noResultsAlertController = UIAlertController.searchResultsAlertController()
+                            self.present(noResultsAlertController, animated: true, completion: nil)
+                        } else {
+                            for photo in photos {
+                                FLCoreDataManager.sharedInstance.savePhotoToCoreData(flickrPhotoEntity: self.flPhotoEntity, flPhoto: photo)
+                            }
+                            
+                            self.tableView.reloadData()
+                        }
+                        
+                    })
                 }
                 
-                OperationQueue.main.addOperation({
-                    self.tableView.reloadData()
-                    
-                    if (self.searchPhotosResults.count == 0)
-                    {
-                        let noResultsAlertController = UIAlertController.searchResultsAlertController()
-                        self.present(noResultsAlertController, animated: true, completion: nil)
-                    }
-                })
             }) { (error) in
                 print(error)
                 let noInternetConnectionAlertController = UIAlertController.defaultNetworkingAlertController({
@@ -143,6 +150,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                 OperationQueue.main.addOperation({
                     self.present(noInternetConnectionAlertController, animated: true, completion: nil)
                 })
+                
             }
         }
     }
