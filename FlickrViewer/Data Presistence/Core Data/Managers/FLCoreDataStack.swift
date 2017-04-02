@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 //Project's deployment target is set to iOS 9.0, the new core data boiler plate for Xcode 8.0 & Swift 3 is
-//only available for targets > iOS 10.0. The below boiler plate has been transformed from Swift 2.2 to Swift 3 to
+//only available for targets < iOS 10.0. The below boiler plate has been transformed from Swift 2.2 to Swift 3 to
 //meet up with the project's deployment target. @available(iOS 10, *) approach has been disregarded.
 
 class FLCoreDataStack {
