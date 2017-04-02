@@ -32,6 +32,7 @@
 		0590411C1E90E87800859B9E /* UserPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059041061E90E87800859B9E /* UserPhotoTableViewCell.swift */; };
 		0590411E1E90EC2900859B9E /* FLCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0590411D1E90EC2900859B9E /* FLCoreDataManager.swift */; };
 		059041201E90F85600859B9E /* FLUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0590411F1E90F85600859B9E /* FLUserDefaultsManager.swift */; };
+		0594E39F1E91472100204BA6 /* FLImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0594E39E1E91472100204BA6 /* FLImageLoader.swift */; };
 		49DCE99D4DBA3DB14895BA39 /* Pods_FlickrViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54090C4033F6E0081A3DF749 /* Pods_FlickrViewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		059041061E90E87800859B9E /* UserPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		0590411D1E90EC2900859B9E /* FLCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLCoreDataManager.swift; sourceTree = "<group>"; };
 		0590411F1E90F85600859B9E /* FLUserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLUserDefaultsManager.swift; sourceTree = "<group>"; };
+		0594E39E1E91472100204BA6 /* FLImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLImageLoader.swift; sourceTree = "<group>"; };
 		54090C4033F6E0081A3DF749 /* Pods_FlickrViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C22780605DE2DFD2A5FC2B /* Pods-FlickrViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrViewer/Pods-FlickrViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		C8F6623EE8D58BDA84FE03AA /* Pods-FlickrViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrViewer/Pods-FlickrViewer.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				059040F71E90E87800859B9E /* FLPhotoDownloader.swift */,
 				059040F81E90E87800859B9E /* FLPhotosManager.swift */,
+				0594E39E1E91472100204BA6 /* FLImageLoader.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				0590410A1E90E87800859B9E /* Dictionary+HTTPParameters.swift in Sources */,
 				0590411A1E90E87800859B9E /* UserPhotosTableViewController.swift in Sources */,
 				0590410F1E90E87800859B9E /* FLCoreDataStack.swift in Sources */,
+				0594E39F1E91472100204BA6 /* FLImageLoader.swift in Sources */,
 				059041121E90E87800859B9E /* FLPhotoDownloader.swift in Sources */,
 				0590410D1E90E87800859B9E /* UIAlertController+NetworkingErrors.swift in Sources */,
 				059041181E90E87800859B9E /* UserPhotoTableViewCell+ConfigureForFLPhoto.swift in Sources */,
