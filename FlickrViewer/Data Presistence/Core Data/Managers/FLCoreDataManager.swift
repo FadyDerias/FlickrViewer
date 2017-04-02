@@ -37,3 +37,17 @@ class FLCoreDataManager {
         
     }
     
+    func performActionForPhotosResultsInCoreData(deleteCoreData: Bool) -> [FLPhoto]? {
+        
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "FLickrPhoto")
+        
+        do {
+            let results: [NSManagedObject] = try context.fetch(fetchRequest)
+            return performActionForHomeSearchTableViewDataSource(managedObjects: results, deleteCoreData: deleteCoreData)
+        } catch {
+            print(error)
+        }
+        
+        return nil
+    }
