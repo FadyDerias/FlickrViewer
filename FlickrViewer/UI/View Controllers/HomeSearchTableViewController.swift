@@ -15,7 +15,6 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     let flickrPhotoTableViewCellIdentifier = "FlickrPhotoTableViewCellIdentifier"
     var searchPhotosResults = NSMutableArray()
     var userInputSearchText: String?
-    var nextPageToLoad: Int = 1
     var nextPageToLoad: Int?
     var flPhotoEntity: NSEntityDescription?
     var context = FLCoreDataStack.sharedInstance.managedObjectContext
