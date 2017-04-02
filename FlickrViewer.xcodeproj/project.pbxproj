@@ -19,7 +19,6 @@
 		0590410E1E90E87800859B9E /* FlickrViewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 059040EE1E90E87800859B9E /* FlickrViewer.xcdatamodeld */; };
 		0590410F1E90E87800859B9E /* FLCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059040F11E90E87800859B9E /* FLCoreDataStack.swift */; };
 		059041111E90E87800859B9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059040F41E90E87800859B9E /* LaunchScreen.storyboard */; };
-		059041121E90E87800859B9E /* FLPhotoDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059040F71E90E87800859B9E /* FLPhotoDownloader.swift */; };
 		059041131E90E87800859B9E /* FLPhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059040F81E90E87800859B9E /* FLPhotosManager.swift */; };
 		059041141E90E87800859B9E /* FLPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059040FA1E90E87800859B9E /* FLPhoto.swift */; };
 		059041151E90E87800859B9E /* FLPhotosList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059040FB1E90E87800859B9E /* FLPhotosList.swift */; };
@@ -52,7 +51,6 @@
 		059040F11E90E87800859B9E /* FLCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FLCoreDataStack.swift; path = Managers/FLCoreDataStack.swift; sourceTree = "<group>"; };
 		059040F31E90E87800859B9E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		059040F41E90E87800859B9E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		059040F71E90E87800859B9E /* FLPhotoDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotoDownloader.swift; sourceTree = "<group>"; };
 		059040F81E90E87800859B9E /* FLPhotosManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotosManager.swift; sourceTree = "<group>"; };
 		059040FA1E90E87800859B9E /* FLPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhoto.swift; sourceTree = "<group>"; };
 		059040FB1E90E87800859B9E /* FLPhotosList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLPhotosList.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 		059040F61E90E87800859B9E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				059040F71E90E87800859B9E /* FLPhotoDownloader.swift */,
 				059040F81E90E87800859B9E /* FLPhotosManager.swift */,
 				0594E39E1E91472100204BA6 /* FLImageLoader.swift */,
 			);
@@ -397,7 +394,6 @@
 				0590411A1E90E87800859B9E /* UserPhotosTableViewController.swift in Sources */,
 				0590410F1E90E87800859B9E /* FLCoreDataStack.swift in Sources */,
 				0594E39F1E91472100204BA6 /* FLImageLoader.swift in Sources */,
-				059041121E90E87800859B9E /* FLPhotoDownloader.swift in Sources */,
 				0590410D1E90E87800859B9E /* UIAlertController+NetworkingErrors.swift in Sources */,
 				059041181E90E87800859B9E /* UserPhotoTableViewCell+ConfigureForFLPhoto.swift in Sources */,
 				059041131E90E87800859B9E /* FLPhotosManager.swift in Sources */,
