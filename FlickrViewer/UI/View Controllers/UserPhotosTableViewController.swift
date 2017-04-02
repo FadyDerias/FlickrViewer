@@ -17,6 +17,7 @@ class UserPhotosTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setNavigationBarTitle(title: "More Photos For Selected User")
         self.tableView.tableFooterView = UIView()
         loadResultsForUserId()
     }
