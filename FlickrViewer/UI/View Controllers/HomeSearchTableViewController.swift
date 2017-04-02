@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate {
     
@@ -15,6 +16,9 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     var searchPhotosResults = NSMutableArray()
     var userInputSearchText: String?
     var nextPageToLoad: Int = 1
+    var nextPageToLoad: Int?
+    var flPhotoEntity: NSEntityDescription?
+    var context = FLCoreDataStack.sharedInstance.managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
