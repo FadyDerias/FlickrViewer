@@ -99,8 +99,14 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if(searchPhotosResults.count > 0) {
-            searchPhotosResults.removeAllObjects()
+            let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: true)
+            
+            if (flPhotos == nil) {
+                searchPhotosResults.removeAllObjects()
+                self.nextPageToLoad = 1
+            }
         }
+        
         loadResultsForUserInputSearchText()
         searchBar.resignFirstResponder()
     }
