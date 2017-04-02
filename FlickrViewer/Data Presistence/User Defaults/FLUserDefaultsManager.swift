@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class FLUserDefaultsManager {
+    
+    static let sharedInstance = FLUserDefaultsManager()
+    private let defaults: UserDefaults = UserDefaults.standard
+    let pageToLoadKey = "nextPageToLoad"
+    let lastUserSearchTextLey = "searchText"
