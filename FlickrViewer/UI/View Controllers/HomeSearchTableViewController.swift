@@ -17,8 +17,8 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     var userInputSearchText: String?
     var previousUserInputSearchText: String?
     var nextPageToLoad: Int?
-    var flPhotoEntity: NSEntityDescription?
     var context = FLCoreDataStack.sharedInstance.managedObjectContext
+    var isExecutingNewSearch = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +48,18 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         cell.configureForFlickrPhotoData(flPhoto: flPhoto)
         
         return cell
+    }
+    
+    func  resetTableView() {
+        if(searchPhotosResults.count > 0) {
+            let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: true)
+            
+            if (flPhotos == nil) {
+                searchPhotosResults.removeAllObjects()
+            }
+        }
+        
+        isExecutingNewSearch = false
     }
     
     // MARK: Table view delegate
@@ -105,6 +117,8 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                 }
             }
             
+            isExecutingNewSearch = true
+            self.nextPageToLoad = 1
             loadResultsForUserInputSearchText()
         }
         
@@ -144,6 +158,11 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
             photoManager.fetchPhotosBySearch(page: pageToLoadNumber, userText: searchText, userId: nil, success: { (photosResult) in
                 
                 self.previousUserInputSearchText = searchText
+                if(self.isExecutingNewSearch) {
+                    OperationQueue.main.addOperation {
+                        self.resetTableView()
+                    }
+                }
                 
                 if let photos = photosResult.photosList?.photos {
                     self.searchPhotosResults.addObjects(from: photos)
