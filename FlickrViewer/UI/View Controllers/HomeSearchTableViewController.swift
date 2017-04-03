@@ -93,6 +93,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         
         if(searchText != userInputSearchText) {
             userInputSearchText = searchText
+            
             if(searchPhotosResults.count > 0) {
                 let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: true)
                 
