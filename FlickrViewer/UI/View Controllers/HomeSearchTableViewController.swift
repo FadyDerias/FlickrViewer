@@ -149,9 +149,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
             photoManager.fetchPhotosBySearch(page: pageToLoadNumber, userText: searchText, userId: nil, success: { (photosResult) in
                 
                 if(self.isExecutingNewSearch) {
-                    OperationQueue.main.addOperation {
-                        self.resetTableView()
-                    }
+                    self.resetTableView()
                 }
                 
                 self.previousUserInputSearchText = searchText
