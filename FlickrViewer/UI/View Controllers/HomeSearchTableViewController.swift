@@ -87,22 +87,25 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     
     //MARK: - UISearchBarDelegate
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        userInputSearchText = searchText
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if(searchPhotosResults.count > 0) {
-            let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: true)
-            
-            if (flPhotos == nil) {
-                searchPhotosResults.removeAllObjects()
-                self.tableView.reloadData()
-                self.nextPageToLoad = 1
+        
+        let searchText = searchBar.text ?? ""
+        
+        if(searchText != userInputSearchText) {
+            userInputSearchText = searchText
+            if(searchPhotosResults.count > 0) {
+                let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: true)
+                
+                if (flPhotos == nil) {
+                    searchPhotosResults.removeAllObjects()
+                    self.tableView.reloadData()
+                    self.nextPageToLoad = 1
+                }
             }
+            
+            loadResultsForUserInputSearchText()
         }
         
-        loadResultsForUserInputSearchText()
         searchBar.resignFirstResponder()
     }
     
