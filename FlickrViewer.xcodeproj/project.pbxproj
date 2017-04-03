@@ -136,7 +136,6 @@
 				05E1509D1E93053F004D4FA5 /* UI */,
 				05E1508A1E93053F004D4FA5 /* Data Persistence */,
 				05E150821E93053F004D4FA5 /* Categories */,
-				05E150A71E93053F004D4FA5 /* Unit Tests */,
 				05E150941E93053F004D4FA5 /* Info.plist */,
 				05E150951E93053F004D4FA5 /* LaunchScreen.storyboard */,
 			);
@@ -262,13 +261,6 @@
 				05E150A61E93053F004D4FA5 /* UserPhotoTableViewCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		05E150A71E93053F004D4FA5 /* Unit Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
 		05E150C71E930606004D4FA5 /* FlickrViewerTests */ = {
@@ -689,6 +681,7 @@
 				05E150CF1E930606004D4FA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
