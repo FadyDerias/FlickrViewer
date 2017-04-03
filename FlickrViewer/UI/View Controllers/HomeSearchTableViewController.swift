@@ -114,6 +114,8 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         searchBar.resignFirstResponder()
     }
     
+
+    
     //MARK: - UserDefaults
     
     func loadSearchQueriesFromUserDefaults() {
@@ -142,11 +144,10 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     func loadResultsForUserInputSearchText() {
         
         let photoManager = FLPhotosManager()
+        
         if let searchText = self.userInputSearchText, let pageToLoadNumber = self.nextPageToLoad {
-            
             photoManager.fetchPhotosBySearch(page: pageToLoadNumber, userText: searchText, userId: nil, success: { (photosResult) in
                 
-                self.previousUserInputSearchText = searchText
                 if(self.isExecutingNewSearch) {
                     OperationQueue.main.addOperation {
                         self.resetTableView()
@@ -166,25 +167,23 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                             let noResultsAlertController = UIAlertController.searchResultsAlertController()
                             self.present(noResultsAlertController, animated: true, completion: nil)
                         } else {
+                            
                             for photo in photos {
                                 FLCoreDataManager.sharedInstance.savePhotoToCoreData(flPhoto: photo)
                             }
                             
                             self.tableView.reloadData()
                         }
-                        
                     })
                 }
                 
             }) { (error) in
                 print(error)
-                let noInternetConnectionAlertController = UIAlertController.defaultNetworkingAlertController({
                 let noInternetConnectionAlertController = UIAlertController.defaultNetworkingAlertController({ 
                     self.loadResultsForUserInputSearchText()
                 }, {
                     self.loadSearchQueriesFromUserDefaults()
                 })
-                
                 OperationQueue.main.addOperation({
                     self.present(noInternetConnectionAlertController, animated: true, completion: nil)
                 })
