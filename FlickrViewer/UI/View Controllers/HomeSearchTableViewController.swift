@@ -153,6 +153,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                     }
                 }
                 
+                self.previousUserInputSearchText = searchText
                 if let photos = photosResult.photosList?.photos {
                     self.searchPhotosResults.addObjects(from: photos)
                     
