@@ -126,7 +126,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     //MARK: - CoreData
     
     func loadDataSourceFromCoreData() {
-
+        
         if let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: false) {
             searchPhotosResults.addObjects(from: flPhotos)
         }
@@ -145,7 +145,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                 
                 self.previousUserInputSearchText = searchText
                 
-                if let photos = photosResult.photosList?.photos { 
+                if let photos = photosResult.photosList?.photos {
                     self.searchPhotosResults.addObjects(from: photos)
                     
                     OperationQueue.main.addOperation({
