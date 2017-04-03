@@ -49,7 +49,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         return cell
     }
     
-    // MARK: UITableViewDelegate
+    // MARK: Table view delegate
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == (searchPhotosResults.count - 1)) {
