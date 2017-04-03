@@ -22,7 +22,6 @@
 		05E150B31E93053F004D4FA5 /* FLCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E150901E93053F004D4FA5 /* FLCoreDataManager.swift */; };
 		05E150B41E93053F004D4FA5 /* FLCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E150911E93053F004D4FA5 /* FLCoreDataStack.swift */; };
 		05E150B51E93053F004D4FA5 /* FLUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E150931E93053F004D4FA5 /* FLUserDefaultsManager.swift */; };
-		05E150B61E93053F004D4FA5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05E150941E93053F004D4FA5 /* Info.plist */; };
 		05E150B71E93053F004D4FA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E150951E93053F004D4FA5 /* LaunchScreen.storyboard */; };
 		05E150B81E93053F004D4FA5 /* FLPhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E150981E93053F004D4FA5 /* FLPhotosManager.swift */; };
 		05E150B91E93053F004D4FA5 /* FLPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E1509A1E93053F004D4FA5 /* FLPhoto.swift */; };
@@ -35,6 +34,7 @@
 		05E150C01E93053F004D4FA5 /* FlickrPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E150A51E93053F004D4FA5 /* FlickrPhotoTableViewCell.swift */; };
 		05E150C11E93053F004D4FA5 /* UserPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E150A61E93053F004D4FA5 /* UserPhotoTableViewCell.swift */; };
 		05E150C91E930606004D4FA5 /* FlickrViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E150C81E930606004D4FA5 /* FlickrViewerTests.swift */; };
+		05E150D11E930C63004D4FA5 /* FLUserDefaultsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E150D01E930C63004D4FA5 /* FLUserDefaultsManagerTests.swift */; };
 		49DCE99D4DBA3DB14895BA39 /* Pods_FlickrViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54090C4033F6E0081A3DF749 /* Pods_FlickrViewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +80,7 @@
 		05E150C61E930606004D4FA5 /* FlickrViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E150C81E930606004D4FA5 /* FlickrViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrViewerTests.swift; sourceTree = "<group>"; };
 		05E150CA1E930606004D4FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05E150D01E930C63004D4FA5 /* FLUserDefaultsManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLUserDefaultsManagerTests.swift; sourceTree = "<group>"; };
 		54090C4033F6E0081A3DF749 /* Pods_FlickrViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C22780605DE2DFD2A5FC2B /* Pods-FlickrViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrViewer/Pods-FlickrViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		C8F6623EE8D58BDA84FE03AA /* Pods-FlickrViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrViewer/Pods-FlickrViewer.release.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +276,7 @@
 			children = (
 				05E150C81E930606004D4FA5 /* FlickrViewerTests.swift */,
 				05E150CA1E930606004D4FA5 /* Info.plist */,
+				05E150D01E930C63004D4FA5 /* FLUserDefaultsManagerTests.swift */,
 			);
 			path = FlickrViewerTests;
 			sourceTree = "<group>";
@@ -383,7 +385,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05E150B61E93053F004D4FA5 /* Info.plist in Resources */,
 				05E150AA1E93053F004D4FA5 /* Main.storyboard in Resources */,
 				05E150A91E93053F004D4FA5 /* Assets.xcassets in Resources */,
 				05E150B71E93053F004D4FA5 /* LaunchScreen.storyboard in Resources */,
@@ -482,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E150D11E930C63004D4FA5 /* FLUserDefaultsManagerTests.swift in Sources */,
 				05E150C91E930606004D4FA5 /* FlickrViewerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
