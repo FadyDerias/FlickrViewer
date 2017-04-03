@@ -74,8 +74,13 @@ class UserPhotosTableViewController: UITableViewController {
                 })
             }) { (error) in
                 print(error)
-                let noInternetConnectionAlertController = UIAlertController.defaultNetworkingAlertController({
+                
+                let noInternetConnectionAlertController = UIAlertController.defaultNetworkingAlertController({ 
                     self.loadResultsForUserId()
+                }, {
+                    if(self.nextPageToLoad > 1) {
+                        self.nextPageToLoad -= 1
+                    }
                 })
                 
                 OperationQueue.main.addOperation({
