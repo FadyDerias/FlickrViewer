@@ -11,11 +11,13 @@ import UIKit
 
 extension UIAlertController {
     
-    static func defaultNetworkingAlertController(_ retryHandler: @escaping (() -> Void)) -> UIAlertController {
+    static func defaultNetworkingAlertController(_ retryHandler: @escaping (() -> Void), _ cancelHandler: @escaping (() -> Void)) -> UIAlertController {
         let alertController = UIAlertController(title: "Error",
                                                 message: "Could not connect to the internet. Would you like to try again?",
                                                 preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (alertController) in
+            cancelHandler()
+        }
         
         let retryAction = UIAlertAction(title: "Retry", style: .default) { (alertController) in
             retryHandler()
