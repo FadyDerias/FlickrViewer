@@ -97,6 +97,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
             
             if (flPhotos == nil) {
                 searchPhotosResults.removeAllObjects()
+                self.tableView.reloadData()
                 self.nextPageToLoad = 1
             }
         }
