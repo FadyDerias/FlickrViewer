@@ -106,17 +106,6 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         
         if(searchText != previousUserInputSearchText) {
             userInputSearchText = searchText
-            
-            if(searchPhotosResults.count > 0) {
-                let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: true)
-                
-                if (flPhotos == nil) {
-                    searchPhotosResults.removeAllObjects()
-                    self.tableView.reloadData()
-                    self.nextPageToLoad = 1
-                }
-            }
-            
             isExecutingNewSearch = true
             self.nextPageToLoad = 1
             loadResultsForUserInputSearchText()
