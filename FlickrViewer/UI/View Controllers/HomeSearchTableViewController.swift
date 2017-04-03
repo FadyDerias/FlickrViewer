@@ -15,6 +15,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     let flickrPhotoTableViewCellIdentifier = "FlickrPhotoTableViewCellIdentifier"
     var searchPhotosResults = NSMutableArray()
     var userInputSearchText: String?
+    var previousUserInputSearchText: String?
     var nextPageToLoad: Int?
     var flPhotoEntity: NSEntityDescription?
     var context = FLCoreDataStack.sharedInstance.managedObjectContext
@@ -91,7 +92,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         
         let searchText = searchBar.text ?? ""
         
-        if(searchText != userInputSearchText) {
+        if(searchText != previousUserInputSearchText) {
             userInputSearchText = searchText
             
             if(searchPhotosResults.count > 0) {
@@ -115,7 +116,8 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     func loadSearchQueriesFromUserDefaults() {
         if let defaultSearchParametersDictionary = FLUserDefaultsManager.sharedInstance.loadSearchParametersFromUserDefaults() {
             nextPageToLoad = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.pageToLoadKey] as? Int
-            userInputSearchText = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.lastUserSearchTextLey] as? String
+            userInputSearchText = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.userSearchTextKey] as? String
+            previousUserInputSearchText = defaultSearchParametersDictionary[FLUserDefaultsManager.sharedInstance.userPreviousSearchTextKey] as? String
         } else {
             nextPageToLoad = 1
         }
@@ -138,14 +140,17 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
         
         let photoManager = FLPhotosManager()
         if let searchText = self.userInputSearchText, let pageToLoadNumber = self.nextPageToLoad {
-            FLUserDefaultsManager.sharedInstance.saveSearchParametersInUserDefaults(nextPageToLoad: pageToLoadNumber, userInputSearchText: searchText)
             
             photoManager.fetchPhotosBySearch(page: pageToLoadNumber, userText: searchText, userId: nil, success: { (photosResult) in
                 
-                if let photos = photosResult.photosList?.photos {
+                self.previousUserInputSearchText = searchText
+                
+                if let photos = photosResult.photosList?.photos { 
                     self.searchPhotosResults.addObjects(from: photos)
                     
                     OperationQueue.main.addOperation({
+                        
+                        FLUserDefaultsManager.sharedInstance.saveSearchParametersInUserDefaults(nextPageToLoad: pageToLoadNumber, userInputSearchText: searchText, userPreviousSearchText: searchText)
                         
                         if (photos.count == 0)
                         {
