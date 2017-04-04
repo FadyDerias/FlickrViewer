@@ -15,7 +15,11 @@ extension UserPhotoTableViewCell {
         self.photoTitleLabel.text = flPhoto.title
         
         if let imageUrl = flPhoto.urlForFLPhotoImage() {
-            self.photoImageView.sd_setImage(with: imageUrl)
+            FLImageLoader.sharedInstance.imageForUrl(url: imageUrl, success: { (image) in
+                self.photoImageView.image = image
+            }, failure: { (error) in
+                print("Error downloading image: \(error)")
+            })
         }
     }
 }
