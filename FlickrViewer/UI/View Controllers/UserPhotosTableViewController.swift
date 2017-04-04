@@ -36,7 +36,6 @@ class UserPhotosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: userPhotoTableViewCellIdentifier, for: indexPath) as!UserPhotoTableViewCell
         
-        cell.accessoryType = .disclosureIndicator
         let flPhoto = searchPhotosResults.object(at: indexPath.row) as! FLPhoto
         cell.configureForFlickrPhotoData(flPhoto: flPhoto)
         
