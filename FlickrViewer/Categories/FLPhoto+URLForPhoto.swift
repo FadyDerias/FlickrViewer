@@ -10,11 +10,11 @@ import Foundation
 
 extension FLPhoto {
     
-    func urlForFLPhotoImage() -> URL? {
+    func urlForFLPhotoImage() -> String? {
         
         if let farmId = self.farmId, let serverID = self.serverId, let photoId = self.photoId, let secretId = self.secretId {
             let urlString = "https://farm\(farmId).staticflickr.com/\(serverID)/\(photoId)_\(secretId).jpg"
-            return URL(string: urlString)!
+            return urlString
         } else {
             return nil
         }
