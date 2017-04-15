@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class FLPhoto: Mappable {
+class FLPhoto: NSObject, NSCoding, Mappable {
     
     var photoId: String?
     var ownerId: String?
@@ -17,6 +17,15 @@ class FLPhoto: Mappable {
     var serverId: String?
     var farmId: Int?
     var title: String?
+    
+    struct PropertyNSCodingKeys {
+        static let photoId = "photoId"
+        static let ownerId = "ownerId"
+        static let secretId = "secretId"
+        static let serverId = "serverId"
+        static let farmId = "farmId"
+        static let title = "title"
+    }
     
     required init?(map: Map) {
     }
@@ -38,6 +47,34 @@ class FLPhoto: Mappable {
         serverId <- map["server"]
         farmId <- map["farm"]
         title <- map["title"]
-
+        
     }
+    
+    //MARK: NSCoding
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(photoId, forKey: PropertyNSCodingKeys.photoId)
+        aCoder.encode(ownerId, forKey: PropertyNSCodingKeys.ownerId)
+        aCoder.encode(secretId, forKey: PropertyNSCodingKeys.secretId)
+        aCoder.encode(serverId, forKey: PropertyNSCodingKeys.serverId)
+        aCoder.encode(farmId, forKey: PropertyNSCodingKeys.farmId)
+        aCoder.encode(title, forKey: PropertyNSCodingKeys.title)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        
+        guard let unarchivedPhotoId = aDecoder.decodeObject(forKey: PropertyNSCodingKeys.photoId) as? String,
+            let unarchivedOwnerId = aDecoder.decodeObject(forKey: PropertyNSCodingKeys.ownerId) as? String,
+            let unarchivedSecretId = aDecoder.decodeObject(forKey: PropertyNSCodingKeys.secretId) as? String,
+            let unarchivedServerId = aDecoder.decodeObject(forKey: PropertyNSCodingKeys.serverId) as? String,
+            let unarchivedFarmId = aDecoder.decodeObject(forKey: PropertyNSCodingKeys.farmId) as? Int,
+            let unarchivedTitle = aDecoder.decodeObject(forKey: PropertyNSCodingKeys.title) as? String
+            else {
+                return nil
+        }
+        
+        self.init(photoId: unarchivedPhotoId, ownerId: unarchivedOwnerId, secretId: unarchivedSecretId, serverId:unarchivedServerId, farmId:unarchivedFarmId, title: unarchivedTitle)
+        
+    }
+    
 }

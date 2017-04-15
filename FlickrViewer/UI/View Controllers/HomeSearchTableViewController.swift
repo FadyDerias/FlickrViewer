@@ -17,7 +17,6 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     var userInputSearchText: String?
     var previousUserInputSearchText: String?
     var nextPageToLoad: Int?
-    var context = FLCoreDataStack.sharedInstance.managedObjectContext
     var isExecutingNewSearch = false
     
     override func viewDidLoad() {
@@ -131,12 +130,10 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
     //MARK: - CoreData
     
     func loadDataSourceFromCoreData() {
-        
-        if let flPhotos = FLCoreDataManager.sharedInstance.performActionForPhotosResultsInCoreData(deleteCoreData: false) {
-            searchPhotosResults.addObjects(from: flPhotos)
+        if let retrievedPhotos = FLNSCodingManager.sharedInstance.loadPhotosFromRoomDirectory() {
+            self.searchPhotosResults.addObjects(from: retrievedPhotos)
+            self.tableView.reloadData()
         }
-        
-        self.tableView.reloadData()
     }
     
     //MARK: - NetworkRequest
@@ -165,11 +162,7 @@ class HomeSearchTableViewController: UITableViewController, UISearchBarDelegate 
                             let noResultsAlertController = UIAlertController.searchResultsAlertController()
                             self.present(noResultsAlertController, animated: true, completion: nil)
                         } else {
-                            
-                            for photo in photos {
-                                FLCoreDataManager.sharedInstance.savePhotoToCoreData(flPhoto: photo)
-                            }
-                            
+                            FLNSCodingManager.sharedInstance.savePhotosToRoomDirectory(flPhotosArray: self.searchPhotosResults)
                             self.tableView.reloadData()
                         }
                     })
